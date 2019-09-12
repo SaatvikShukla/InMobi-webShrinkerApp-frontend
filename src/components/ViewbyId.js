@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
 class View extends Component {
-    baseUrl = 'http://localhost:3000/view'
-
     constructor(props) {
         super(props);
         this.state = {
             viewData: []
         }
-    }
+    };
 
+    baseUrl = 'http://localhost:3000/view';
+
+    
     componentDidMount() {
         fetch(this.baseUrl).then((result) => {
             result.json().then(data => {
@@ -21,20 +22,17 @@ class View extends Component {
     }
 
     renderItem = () => {
+        console.log(this.props.id)
+
         const { viewData } = this.state;
 
         return viewData.map((item, index) =>
-                <div>
-                    <table key={index}>
-                        <tbody>
-                            <tr>
-                                <td className="dataId">{item._id}</td>
-                                <td className="dataFilename">{item.filename}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                )
+            <table key={index}>
+                <tr>
+                    <td className="dataId">{item._id}</td>
+                    <td className="dataFilename">{item.filename}</td>
+                </tr>
+            </table>)
     }
 
     render() {

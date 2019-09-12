@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Upload from './components/Upload';
 import View from './components/View';
+import ViewbyId from './components/ViewbyId';
 // import Contact from './components/Contact';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/upload' component={Upload} />
+              <Route path='/view/:id' component={ViewbyId} />
               <Route path='/view' component={View} />
               {/* <Route path='/contact' component={Contact} /> */}
               <Route path='/about' component={About} />
