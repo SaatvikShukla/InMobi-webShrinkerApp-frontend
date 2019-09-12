@@ -26,7 +26,7 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/upload' component={Upload} />
-              <Route path='/view/:id' component={ViewbyId} />
+              <Route path='/view/:id?' component={ViewbyId} />
               <Route path='/view' component={View} />
               {/* <Route path='/contact' component={Contact} /> */}
               <Route path='/about' component={About} />
